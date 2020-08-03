@@ -1,0 +1,8 @@
+def isPalindrome(aString):
+    '''
+    aString: a string
+    '''
+    reverseString = []
+    for char in aString:
+        reverseString.insert(0,char)
+    return aString == "".join(reverseString)
