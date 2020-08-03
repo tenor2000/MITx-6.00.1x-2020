@@ -1,0 +1,18 @@
+def dict_interdiff(d1, d2):
+    '''
+    d1, d2: dicts whose keys and values are integers
+    Returns a tuple of dictionaries according to the instructions above
+    '''
+    commonKeys = [x for x in d1 if x in d2]
+    uncommonKeys = sorted([x for x in d1 if x not in d2] + [x for x in d2 if x not in d1])
+    dinter = {}
+    ddiff = {}
+    for key in commonKeys:
+        dinter[key] = f(d1[key],d2[key])
+    for key in uncommonKeys:
+        if d1.get(key):
+            ddiff[key] = d1[key]
+        else:
+            ddiff[key] = d2[key]
+    
+    return dinter, ddiff
