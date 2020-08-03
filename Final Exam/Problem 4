@@ -1,0 +1,14 @@
+def primes_list(N):
+    '''
+    N: an integer
+    '''
+    x = list(range(1,N+1))
+    primes = []
+    while N > 1:
+        divisorList = [i for i in x if N % i == 0]
+        if (divisorList[0] == 1 and divisorList[1] == N):
+            primes.append(N)
+        N -= 1
+    
+    return sorted(primes)
+      
